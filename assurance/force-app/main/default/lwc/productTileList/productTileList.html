@@ -27,9 +27,9 @@
                 ></c-paginator>
             </template>
             <template if:false={products.data.records.length}>
-                <c-placeholder-2
+                <c-placeholder
                     message="There are no products matching your current selection"
-                ></c-placeholder-2>
+                ></c-placeholder>
             </template>
         </template>
         <template if:true={products.error}>
