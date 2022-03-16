@@ -1,5 +1,5 @@
 .slds-card {
-    background: rgb(243, 242, 242);
+    background: white;
 }
 
 .search-bar {
@@ -19,4 +19,10 @@ c-product-tile {
 
 c-paginator {
     display: block;
+}
+
+.titre{
+    font-size: 20px;
+    text-align: center;
+
 }

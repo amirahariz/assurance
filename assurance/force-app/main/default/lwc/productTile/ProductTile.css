@@ -8,7 +8,15 @@ a {
     color: inherit;
 }
 
+img.product {
 
+    height: 120px;
+    
+    max-width: initial;
+    
+    pointer-events: none;
+    
+    }
 
 .title {
     font-weight: bold;

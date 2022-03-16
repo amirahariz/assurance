@@ -1,5 +1,5 @@
 <template>
-    <lightning-card icon-name="standard:apex_plugin">
+    <lightning-card >
         <template if:true={recordId}>
             <span slot="title">{productName}</span>
             <lightning-button-icon
@@ -15,19 +15,38 @@
                     density="compact"
                 >
                   
-                    
-                    <section>Description</section>
-                    <lightning-output-field
+                    <p>{productDescription}</p>
+                    <!--lightning-output-field
                         field-name={descriptionField}
-                    ></lightning-output-field>
+                    ></lightning-output-field-->
+                    <br/>
+                    <br/>
 
-                   
+               <h2>Nos Packs</h2>
+               <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+              
+                    <template for:each={packs.data} for:item="pack">
+                        <tr key={pack.Id}>
+                            <td>
+                               <a onclick={handleClick}>{pack.Name}</a> 
+                               <c-pack-popup></c-pack-popup>
+                            </td>
+                        </tr>
+
+                    </template>
+                </table>
+
+                       
+                 
                    
                    
                 </lightning-record-view-form>
             </div>
         </template>
-
-      
+        <template if:false={recordId}>
+            <c-placeholder></c-placeholder>
+        </template>
     </lightning-card>
+
+    
 </template>

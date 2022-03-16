@@ -18,16 +18,22 @@ export default class ProductTile2 extends LightningElement {
         this._product = value;
         this.name = value.Name;
         this.description = value.Description;
+        this.pictureUrl = value.Picture_URL__c;
+
     }
 
     /** Product__c field values to display. */
     name;
     description;
+    pictureUrl;
+
 
     handleClick() {
         const selectedEvent = new CustomEvent('selected', {
             detail: this.product.Id
         });
+        //console.log(this.product.Id);
+
         this.dispatchEvent(selectedEvent);
     }
 

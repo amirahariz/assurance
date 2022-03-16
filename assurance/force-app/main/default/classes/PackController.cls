@@ -8,4 +8,14 @@ public with sharing class PackController {
            
         ];
     }
+
+    @AuraEnabled
+    public static Pack__c getPackById(String packId){
+       return[
+        SELECT Name, Description__c
+        FROM Pack__c
+        WHERE Pack__c.Id=:packId
+        WITH SECURITY_ENFORCED
+       ];
+    }
 }

@@ -34,7 +34,6 @@ export default class ProductTileList extends LightningElement {
     totalItemCount = 0;
 
     /** JSON.stringified version of filters to pass to apex */
-  //  filters = {};
 
     /** Load context for Lightning Messaging Service */
     @wire(MessageContext) messageContext;
@@ -48,14 +47,6 @@ export default class ProductTileList extends LightningElement {
     @wire(getProducts, { pageNumber: '$pageNumber' })
     products;
 
-  /*  connectedCallback() {
-        // Subscribe to ProductsFiltered message
-        this.productFilterSubscription = subscribe(
-            this.messageContext,
-            PRODUCTS_FILTERED_MESSAGE,
-            (message) => this.handleFilterChange(message)
-        );
-    }*/
 
     handleProductSelected(event) {
         // Published ProductSelected message
@@ -64,17 +55,7 @@ export default class ProductTileList extends LightningElement {
         });
     }
 
-   /* handleSearchKeyChange(event) {
-        this.filters = {
-            searchKey: event.target.value.toLowerCase()
-        };
-        this.pageNumber = 1;
-    }
-
-    handleFilterChange(message) {
-        this.filters = { ...message.filters };
-        this.pageNumber = 1;
-    }*/
+   
 
     handlePreviousPage() {
         this.pageNumber = this.pageNumber - 1;
